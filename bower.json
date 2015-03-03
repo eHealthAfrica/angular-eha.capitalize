@@ -1,0 +1,22 @@
+{
+  "name": "angular-eha.capitalize",
+  "description": "Capitalization tools (directive + filter) for Angular.js",
+  "version": "0.0.0",
+  "authors": [
+    "oss@ehealthafrica.org"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": ["capitalize"," directive"," filter"," angularjs"],
+  "main": "dist/angular-eha.capitalize.js",
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
