@@ -1,6 +1,6 @@
 # angular-eha.capitalize
 
-[![Build Status](https:/travis-ci.org/eHealthAfrica/angular-eha.capitalize.svg?branch=master)](https://magnum.travis-ci.com/eHealthAfrica/angular-eha.capitalize)
+[![Build Status](https://travis-ci.org/eHealthAfrica/angular-eha.capitalize.svg)](https://travis-ci.org/eHealthAfrica/angular-eha.capitalize)
 
 ## Usage
 
