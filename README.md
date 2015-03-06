@@ -8,11 +8,18 @@
 
 The filter supports two modes; 'first' (default) and 'words' which can be passed to the filter like so:
 
+#### default
 ```html
 {{ 'i am a string' | capitalize }} // I am a string
+```
 
+#### first
+```html
 {{ 'i am a string' | capitalize:'first' }} // I am a string
+```
 
+#### words
+```html
 {{ 'i am a string' | capitalize:'words' }} // I Am A String
 ```
 
@@ -41,7 +48,23 @@ The filter supports two modes; 'first' (default) and 'words' which can be passed
 
 ### Directive
 
-The directive leverages `$filter('capitalize')` supporting exactly the same functionality via a slightly different interface. Mode is passed via the `capitalize` attribute, e.g. `<p capitalize="first" ng-bind="i am a string"></p>` and `<p capitalize="words" ng-bind="i am a string"></p>`. If no mode parameter is passed the first letter will be capitalized by default.
+The directive leverages `$filter('capitalize')` supporting exactly the same functionality via a slightly different interface. Mode is passed via the `capitalize` attribute.
+
+#### default
+
+```html
+<p capitalize ng-bind="i am a string"></p> <!-- I am a string -->
+``` 
+
+#### first
+```html
+<p capitalize="first" ng-bind="i am a string"></p> <!-- I am a string -->
+```
+
+#### words
+```html
+<p capitalize="words" ng-bind="i am a string"></p> <!-- I Am A String -->
+```
 
 #### Example
 
