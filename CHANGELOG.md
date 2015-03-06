@@ -4,6 +4,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - unreleased
 
+## v1.1.0 - 06/03/2015
+
+### Added
+- configurable `mode` currently supporting 'first' and 'words'
+- improved test coverage
+- improved documentation
+
+### Fixed
+- Normalises functionality of filter and directive
+
+
 ## v1.0.1 - 04/03/2015
 
 ### Fixed
