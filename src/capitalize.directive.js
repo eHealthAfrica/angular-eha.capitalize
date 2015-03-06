@@ -25,32 +25,21 @@
    * </example>
    *
    */
-  angular.module('eha.capitalize.directive', [])
-    .directive('capitalize', function() {
+  var ngModule = angular.module('eha.capitalize.directive', [])
+    .directive('capitalize', function($filter) {
       return {
         restrict: 'A',
         require: 'ngModel',
         link: function(scope, element, attrs, ngModelCtrl) {
-          var nameSplitter = /[\s-–]+/g;
+
+          var mode = attrs.capitalize || 'words';
+
           if (!ngModelCtrl) {
             return;
           }
 
           function format(val) {
-            val = String.prototype.trim.call(val || '');
-            if (!val) {
-              return;
-            }
-
-            var splits = val.split(nameSplitter);
-            var dividers = val.match(nameSplitter) || [];
-            return splits.reduce(function(ret, name, index) {
-              var init = name[0];
-              var rest = name.substr(1);
-              name = init.toUpperCase() + rest;
-              // dividers is expected to be one step shorter than splits
-              return ret + name + (dividers[index] || '');
-            }, '');
+            return $filter('capitalize')(val, mode);
           }
 
           ngModelCtrl.$formatters.push(format);
@@ -63,6 +52,7 @@
         }
       };
     });
+
   // Check for and export to commonjs environment
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = ngModule;
