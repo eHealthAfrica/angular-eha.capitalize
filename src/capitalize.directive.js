@@ -7,7 +7,13 @@
    * @restrict A
    * @description
    *
-   * Capitalize the first letter of a string
+   * String capitalization directive. Capitalizes a model value.
+   * Leverages `$filter('capitalize')`.
+   *
+   * Supports 2 modes:
+   *
+   * - `capitalize="words"` capitalize all words in string (default)
+   * - `capitalize="first"` capitialize the first word only
    *
    * @example
    * <example module="capitalizeDirectiveExample">
@@ -21,6 +27,36 @@
    *  </file>
    *  <file name="capitalizeDirectiveExample.html">
    *    <p capitalize ng-bind="str"></p>
+   *  </file>
+   * </example>
+   *
+   * @example
+   * <example module="capitalizeDirectiveExampleFirst">
+   *  <file name="capitalizeDirectiveExampleFirst.js">
+   *    angular.module('capitalizeDirectiveExampleFirst',[
+   *      'eha.capitalize.directive'
+   *    ])
+   *    .controller('TestCtrl', function($scope) {
+   *      $scope.str = 'i am a lowercase str';
+   *    });
+   *  </file>
+   *  <file name="capitalizeDirectiveExampleFirst.html">
+   *    <p capitalize="first" ng-bind="str"></p>
+   *  </file>
+   * </example>
+   *
+   * @example
+   * <example module="capitalizeDirectiveExampleWords">
+   *  <file name="capitalizeDirectiveExampleWords.js">
+   *    angular.module('capitalizeDirectiveExampleWords',[
+   *      'eha.capitalize.directive'
+   *    ])
+   *    .controller('TestCtrl', function($scope) {
+   *      $scope.str = 'i am a lowercase str';
+   *    });
+   *  </file>
+   *  <file name="capitalizeDirectiveExampleWords.html">
+   *    <p capitalize="words" ng-bind="str"></p>
    *  </file>
    * </example>
    *
