@@ -4,6 +4,103 @@
 
 ## Usage
 
+### Filter
+
+The filter supports two modes; 'first' (default) and 'words' which can be passed to the filter like so:
+
+#### default
+```html
+{{ 'i am a string' | capitalize }} <!-- I am a string -->
+```
+
+```javascript
+$filter('capitalize')('i am a string'); // I am a string
+```
+
+#### first
+```html
+{{ 'i am a string' | capitalize:'first' }} <!-- I am a string -->
+```
+
+```javascript
+$filter('capitalize')('i am a string', 'first'); // I am a string
+```
+
+#### words
+```html
+{{ 'i am a string' | capitalize:'words' }} <!-- I Am A String -->
+```
+
+```javascript
+$filter('capitalize')('i am a string', 'words'); // I Am A String
+```
+
+#### Example
+
+```html
+<html ng-app="capitalizeFilterExample">
+  <head>
+    <title>Back Button Example</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular-eha.capitalize.js"></script>
+    <script>
+       angular.module('capitalizeFilterExample',[
+         'eha.capitalize.filter'
+       ])
+       .controller('TestCtrl', function($scope) {
+         $scope.str = 'i am a lowercase str';
+       });
+    </script>
+  </head>
+  <body>
+    <p>{{ str | capitalize }}</p>
+  </body>
+</html>
+```
+
+### Directive
+
+The directive leverages `$filter('capitalize')` supporting exactly the same functionality via a slightly different interface. Mode is passed via the `capitalize` attribute.
+
+#### default
+
+```html
+<p capitalize ng-bind="i am a string"></p> <!-- I am a string -->
+``` 
+
+#### first
+```html
+<p capitalize="first" ng-bind="i am a string"></p> <!-- I am a string -->
+```
+
+#### words
+```html
+<p capitalize="words" ng-bind="i am a string"></p> <!-- I Am A String -->
+```
+
+#### Example
+
+```html
+<html ng-app="capitalizeDirectiveExample">
+  <head>
+    <title>Back Button Example</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular-eha.capitalize.js"></script>
+    <script>
+       angular.module('capitalizeDirectiveExample',[
+         'eha.capitalize.directive'
+       ])
+       .controller('TestCtrl', function($scope) {
+         $scope.str = 'i am a lowercase str';
+       });
+    </script>
+  </head>
+  <body>
+    <p capitalize ng-bind="str"></p>
+  </body>
+</html>
+```
+
 ## Installation
 
 Install with npm:
@@ -39,51 +136,7 @@ wiredep: {
 
 Then you're free to include whichever bundle you prefer in what ever manner you prefer.
 
-### Example (directive)
 
-```htm
-<html ng-app="capitalizeDirectiveExample">
-  <head>
-    <title>Back Button Example</title>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular/angular-eha.capitalize.js"></script>
-    <script>
-       angular.module('capitalizeDirectiveExample',[
-         'eha.capitalize.directive'
-       ])
-       .controller('TestCtrl', function($scope) {
-         $scope.str = 'i am a lowercase str';
-       });
-    </script>
-  </head>
-  <body>
-    <p capitalize ng-bind="str"></p>
-  </body>
-</html>
-```
-
-### Example (filter)
-
-```htm
-<html ng-app="capitalizeFilterExample">
-  <head>
-    <title>Back Button Example</title>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular/angular-eha.capitalize.js"></script>
-    <script>
-       angular.module('capitalizeFilterExample',[
-         'eha.capitalize.filter'
-       ])
-       .controller('TestCtrl', function($scope) {
-         $scope.str = 'i am a lowercase str';
-       });
-    </script>
-  </head>
-  <body>
-    <p>{{ str | capitalize }}</p>
-  </body>
-</html>
-```
 ## Contributing
 
 ### Prerequisites
