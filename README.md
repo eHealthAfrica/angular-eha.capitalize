@@ -10,17 +10,29 @@ The filter supports two modes; 'first' (default) and 'words' which can be passed
 
 #### default
 ```html
-{{ 'i am a string' | capitalize }} // I am a string
+{{ 'i am a string' | capitalize }} <!-- I am a string -->
+```
+
+```javascript
+$filter('capitalize')('i am a string'); // I am a string
 ```
 
 #### first
 ```html
-{{ 'i am a string' | capitalize:'first' }} // I am a string
+{{ 'i am a string' | capitalize:'first' }} <!-- I am a string -->
+```
+
+```javascript
+$filter('capitalize')('i am a string', 'first'); // I am a string
 ```
 
 #### words
 ```html
-{{ 'i am a string' | capitalize:'words' }} // I Am A String
+{{ 'i am a string' | capitalize:'words' }} <!-- I Am A String -->
+```
+
+```javascript
+$filter('capitalize')('i am a string', 'words'); // I Am A String
 ```
 
 #### Example
